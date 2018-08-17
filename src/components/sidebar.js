@@ -1,37 +1,19 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class Sidebar extends Component {
   constructor(props) {
     super(props);
-    
     this.state = {
-      'allContacts': [
-        {
-          'firstName': 'Liana',
-          "lastName": "Crooks",
-          "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/kevinoh/128.jpg",
-        },
-        {
-          'firstName': 'Thiago',
-          "lastName": "Felix",
-          "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/andysolomon/128.jpg"
-        },
-        {
-          'firstName': 'Thaynara',
-          "lastName": "Késsia",
-          "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/andysolomon/128.jpg"
-        },
-        {
-          'firstName': 'Lidia',
-          "lastName": "Miranda",
-          "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/andysolomon/128.jpg"
-        }
-      ]
+      allContacts: [],
+      contacts: []
     }
+    
   }
 
-  componentWillMount(){
-    this.setState({contacts: this.state.allContacts})
+  componentWillMount() {
+    axios.get('https://api.myjson.com/bins/15js3g')
+    .then(response => this.setState({allContacts: response.data, contacts: response.data}));
   }
 
   render() {
@@ -47,15 +29,18 @@ class Sidebar extends Component {
           </form>
         </div>
 
-        <ul className="collection">
+        <ul className="collection contactsList">
           {this.state.contacts.map((contact) => {
             return (
               <li className="collection-item avatar">
-                <img src={contact.avatar} alt="" className="circle" />
-                <span className="title">{contact.firstName}</span>
-                <p>{contact.lastName}<br />
+                <img src={contact.general.avatar} alt="" className="circle" />
+                <span className="title">{contact.general.firstName} {contact.general.lastName}</span>
+                <p>{contact.job.company}<br />
+                  {contact.address.country}
                 </p>
-                <a href="#!" className="secondary-content"><i className="material-icons">arrow_forward</i></a>
+                { contact.general.firstName !== "" &&
+                  <a href="#!" className="secondary-content" ><i className="material-icons">arrow_forward</i></a>
+                }
               </li>
             );
           })
@@ -69,8 +54,8 @@ class Sidebar extends Component {
     var updatedContacts = this.state.allContacts;
 
     updatedContacts = updatedContacts.filter(function(contact){
-      return contact.firstName.toLowerCase().search(event.target.value.toLowerCase()) !== -1 ||
-             contact.lastName.toLowerCase().search(event.target.value.toLowerCase()) !== -1;
+      return contact.general.firstName.toLowerCase().search(event.target.value.toLowerCase()) !== -1 ||
+             contact.general.lastName.toLowerCase().search(event.target.value.toLowerCase()) !== -1;
     });
 
     console.log(updatedContacts);

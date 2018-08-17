@@ -24,6 +24,16 @@
 
 .side-bar{
   width: 25%;
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+.contactsList{
+  height: 100%;
+}
+
+.contactsList:hover{
+  overflow-y:scroll;
 }
 
 @keyframes App-logo-spin {

@@ -5,8 +5,6 @@ import Sidebar from './components/sidebar';
 class App extends Component {
   constructor(props){
     super(props);
-
-    this.state = { 'contato': [] }
   }
 
   render() {
