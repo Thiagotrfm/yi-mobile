@@ -28,12 +28,93 @@
   overflow-y: hidden;
 }
 
-.contactsList{
+.contacts-list{
   height: 100%;
 }
 
-.contactsList:hover{
+.contacts-list:hover{
   overflow-y:scroll;
+}
+
+.clicable-item:hover{
+  background-color: #DFDFDF;
+}
+
+.clicable-item:active{
+  background-color: #BFBFBF;
+}
+
+.selected-contact{
+  text-align: center;
+  overflow: hidden;
+}
+
+.sidenav{
+  overflow-y: hidden;
+  width: 28%;
+}
+
+.yi-logo{
+  width: 72%;
+  height: 100vh;
+  margin: 0 auto;
+  margin-top: 17%;
+  overflow: hidden;
+}
+
+.contact-info{
+  width: 72%;
+  height: 100vh;
+  margin: 0 auto;
+  margin-top: 3%;
+  overflow: hidden;
+}
+
+.contact-avatar{
+  border-radius: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+h1{
+  font-size: 250%;
+}
+
+h2{
+  margin-top: -3%;
+  font-size: 130%;
+}
+
+li {
+  text-align: left;
+}
+
+.table-row{
+  width: 72%;
+  float: right;
+  text-align: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #A70000;
+  border: 0px none #FFFFFF;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A70000;
+}
+::-webkit-scrollbar-track {
+  background: #E5E3E3;
+  border-radius: 50px;
 }
 
 @keyframes App-logo-spin {
