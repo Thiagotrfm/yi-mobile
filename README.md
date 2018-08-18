@@ -1,3 +1,7 @@
+## Execução
+
+  A aplicação pode ser acessada através [desse link](https://thiagotrfm.github.io/yi-mobile/).
+
 ## Instalação
 
   Inicialmente, é preciso clonar o repositório com o seguinte comando:
