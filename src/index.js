@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import promise from 'redux-promise';
 import { createStore, applyMiddleware } from 'redux';
 import reducers from './reducers';
-import App from './App';
+import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
 
 const store = createStore(reducers, applyMiddleware(promise));

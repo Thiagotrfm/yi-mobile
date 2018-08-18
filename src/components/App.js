@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import './App.css';
-import Sidebar from './components/sidebar';
-import SelectedContact from './containers/selectedContact';
+import Sidebar from './sidebar';
+import SelectedContact from '../containers/selectedContact';
 
 
 class App extends Component {
